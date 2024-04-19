@@ -11,7 +11,7 @@ public class CheckString1 {
 		System.out.print("パスワード：");
 		String pw = scan.next();
 		
-		if (pw.equals("himitu")) {
+		if (pw.equals("himitu")) { //pw == "himitu"でもOKですが。。。
 			System.out.println("一致しました");
 		} else {
 			System.out.println("一致しませんでした");

@@ -18,7 +18,7 @@ public class CheckInteger2 {
 			System.out.println("xはyより大きいです");
 		} else if (x < y) {
 			System.out.println("xはyより小さいです");
-		} else {
+		} else { // else if (x == y) {としてもOK
 			System.out.println("xとyは等しいです");
 		}
 
