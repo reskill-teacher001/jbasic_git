@@ -7,7 +7,7 @@ public class IntegerArray2 {
 		int[] numbers = {1, 7, 2, 7, 3};
 		
 		for (int data : numbers) {
-			sum += data;
+			sum += data; //sum = sum + data;
 		}
 		
 		System.out.println("合計：" + sum);

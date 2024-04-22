@@ -14,17 +14,26 @@ public class CheckPassword2 {
 		System.out.print("パスワードを入力してください：");
 		pw = scan.next();
 		
-		while (true) {
-			if (pw.equals("himitu")) {
-				judge = true;
-				break;
-			}
-			
+//		while (true) {
+//			if (pw.equals("himitu")) {
+//				judge = true;
+//				break;
+//			}
+//			
+//			System.out.print("再入力してください：");
+//			pw = scan.next();
+//		}
+		
+//		if (judge == true) {
+//			System.out.println("ログインできました");
+//		}
+
+		while (!pw.equals("himitu")) {
 			System.out.print("再入力してください：");
 			pw = scan.next();
 		}
 		
-		if (judge == true) {
+		if (pw.equals("himitu")) {
 			System.out.println("ログインできました");
 		}
 	}

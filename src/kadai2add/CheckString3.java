@@ -17,7 +17,7 @@ public class CheckString3 {
 			System.out.print(i + "つ目の文字列を入力してください：");
 			String str = scan.next();
 			
-			chainStr += str;
+			chainStr += str; //chainStr = chainStr + str;
 			System.out.println(chainStr);
 		}
 		
