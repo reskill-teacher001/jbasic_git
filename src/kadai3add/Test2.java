@@ -6,45 +6,38 @@ import java.util.Scanner;
 public class Test2 {
 
 	public static void main(String[] args) {
-		//キーボード入力のおまじない
-		Scanner scan = new Scanner(System.in);
-		
 		int data1 = getData();
 		
 		System.out.println("乱数の数値：" + data1);
 		
 		int count = 0;
 		
-		boolean judge = compare(130, 102);
+		while (true) {
+			int data2 = inputData();
+			
+			count++;
+			
+			if (compare(data1, data2) == true) {
+				break;
+			}
+		}
 		
-//		while (true) {
-//			System.out.print("３桁の数字を入力してください：");
-//			int data2 = scan.nextInt();
-//			
-//			if (String.valueOf(data2).length() != 3) { //３桁の入力チェック
-//				continue;
-//			}
-//			
-//			count++;
-//			
-//			boolean judge = compare(data1, data2);
-//		}
+		System.out.println(count + "回で当たりました！");
 
 	}
 	
 	static int getData() {
 		//乱数を発生させるおまじない
 		Random rand = new Random();
+		
 		int data = 0;
 		
-		boolean judge = true;
-		
-		while (judge) {
+		while (true) {
 			data = rand.nextInt(900) + 100; //３桁の乱数を発生させる
 			
 			char[] suji = String.valueOf(data).toCharArray();
 			
-			
+			boolean judge = true;
 			
 			for (int i = 0; i < suji.length - 1; i++) {
 				for (int j = i + 1; j < suji.length; j++) {
@@ -52,6 +45,44 @@ public class Test2 {
 						judge = false;
 					}
 				}
+			}
+			
+			if (judge == true) {
+				break;
+			}
+		}
+
+		return data;
+	}
+	
+	static int inputData() {
+		//キーボード入力のおまじない
+		Scanner scan = new Scanner(System.in);
+		
+		int data = 0;
+		
+		while (true) {
+			System.out.print("３桁の異なる数字を入力してください：");
+			data = scan.nextInt();
+			
+			char[] suji = String.valueOf(data).toCharArray();
+			
+			if (suji.length != 3) {
+				continue;
+			}
+			
+			boolean judge = true;
+			
+			for (int i = 0; i < suji.length - 1; i++) {
+				for (int j = i + 1; j < suji.length; j++) {
+					if (suji[i] == suji[j]) {
+						judge = false;
+					}
+				}
+			}
+			
+			if (judge == true) {
+				break;
 			}
 		}
 
@@ -83,6 +114,10 @@ public class Test2 {
 		}
 		
 		System.out.println(hit + "ヒット・" + blow + "ブロー");
+		
+		if (hit == 3 && blow == 0) {
+			judge = true;
+		}
 		
 		return judge;
 	}
