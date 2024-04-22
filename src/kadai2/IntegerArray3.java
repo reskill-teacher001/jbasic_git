@@ -8,9 +8,15 @@ public class IntegerArray3 {
 		
 		for (int data : numbers) {
 			if (data == 7) {
-				count++;
+				count++; //count = count + 1; count += 1;
 			}
 		}
+		
+//		for (int i = 0 ; i < numbers.length; i++) {
+//			if (numbers[i] == 7) {
+//				count++; //count = count + 1; count += 1;
+//			}
+//		}
 		
 		System.out.println(count + "個ありました");
 	}
