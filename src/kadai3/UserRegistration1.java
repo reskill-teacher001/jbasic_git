@@ -36,8 +36,9 @@ public class UserRegistration1 {
 			System.out.println("年齢は0以上130以下で入力してください");
 			return;
 		}
-
+		
 		System.out.println("名前：" + name + "、年齢：" + age + "で登録しました。");
+		
 	}
 
 }

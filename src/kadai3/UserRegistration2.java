@@ -58,10 +58,10 @@ public class UserRegistration2 {
 		// 年齢が0未満、または、130より大きい場合エラー 
 		if (!(0 <= age && age <= 130)) { // if (age < 0 || 130 < age) {　でもOK
 			System.out.println("年齢は0以上130以下で入力してください");
-			judge = true;
+			return true;
 		}
 
-		return judge;
+		return false;
 	}
 
 }

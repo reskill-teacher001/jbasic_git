@@ -35,10 +35,14 @@ public class Test2 {
 		while (true) {
 			data = rand.nextInt(900) + 100; //３桁の乱数を発生させる
 			
+			//数値を３桁のchar型の配列に変換する
 			char[] suji = String.valueOf(data).toCharArray();
 			
 			boolean judge = true;
 			
+			//３桁の数字の中で重複する値がないかをチェック
+			//judgeが「true」は重複していない
+			//judgeが「false」は重複している
 			for (int i = 0; i < suji.length - 1; i++) {
 				for (int j = i + 1; j < suji.length; j++) {
 					if (suji[i] == suji[j]) {
@@ -65,6 +69,7 @@ public class Test2 {
 			System.out.print("３桁の異なる数字を入力してください：");
 			data = scan.nextInt();
 			
+			//数値を３桁のchar型の配列に変換する
 			char[] suji = String.valueOf(data).toCharArray();
 			
 			if (suji.length != 3) {
@@ -73,6 +78,9 @@ public class Test2 {
 			
 			boolean judge = true;
 			
+			//３桁の数字の中で重複する値がないかをチェック
+			//judgeが「true」は重複していない
+			//judgeが「false」は重複している
 			for (int i = 0; i < suji.length - 1; i++) {
 				for (int j = i + 1; j < suji.length; j++) {
 					if (suji[i] == suji[j]) {
@@ -92,7 +100,7 @@ public class Test2 {
 	static boolean compare(int data1, int data2) {
 		boolean judge = false;
 		
-		//２つの数値を３桁のchar型の配列に変換
+		//２つの数値を３桁のchar型の配列に変換する
 		char[] x = String.valueOf(data1).toCharArray();
 		char[] y = String.valueOf(data2).toCharArray();
 		

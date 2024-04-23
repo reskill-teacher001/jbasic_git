@@ -22,6 +22,14 @@ public class CalcPoints2 {
 		System.out.println(member + "には" + point + "ポイント付与されます");
 	}
 
+	static int getPoints(int price, int rank) {
+		double per = rank == 1 ? 0.2 : 0.1;
+
+		int point = (int) (price * per);
+
+		return point;
+	}
+
 	static int getPoints(int price, boolean premier) {
 		double per = premier ? 0.2 : 0.1;
 
