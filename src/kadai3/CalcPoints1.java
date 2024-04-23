@@ -17,6 +17,14 @@ public class CalcPoints1 {
 	static int getPoints(int price, boolean premier) {
 		double per = premier == true ? 0.2 : 0.1;
 		
+//		double per = 0.0;
+//		
+//		if (premier == true) {
+//			per = 0.2;
+//		} else {
+//			per = 0.1;
+//		}
+		
 		int point = (int)(price * per);
 		
 		return point;

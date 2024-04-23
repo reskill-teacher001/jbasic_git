@@ -103,12 +103,12 @@ public class Test2 {
 			for (int j = 0; j < y.length; j++) {
 				if (i == j && x[i] == y[j]) {
 					hit++;
-					break;
+					//break;
 				}
 				
 				if (i != j && x[i] == y[j]) {
 					blow++;
-					break;
+					//break;
 				}
 			}
 		}
