@@ -19,10 +19,18 @@ public class Convert {
 	}
 	
 	static void reverse(double x) {
-		char[] moji = String.valueOf(x).toCharArray();
+//		char[] moji = String.valueOf(x).toCharArray();
+//		
+//		for (int i = moji.length - 1; i >= 0; i--) {
+//			System.out.print(moji[i]);
+//		}
+//		
+//		System.out.println();
 		
-		for (int i = moji.length - 1; i >= 0; i--) {
-			System.out.print(moji[i]);
+		String s = String.valueOf(x);
+		
+		for (int i = s.length() - 1; i >= 0; i--) {
+			System.out.print(s.charAt(i));
 		}
 		
 		System.out.println();
