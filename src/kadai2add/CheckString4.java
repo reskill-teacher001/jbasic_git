@@ -16,7 +16,7 @@ public class CheckString4 {
 
 		
 		for (int i = 0; i < list.length; i++) {
-			System.out.print(i + "つ目の文字列を入力してください：");
+			System.out.print((i + 1) + "つ目の文字列を入力してください：");
 			list[i] = scan.next();
 		}
 		
