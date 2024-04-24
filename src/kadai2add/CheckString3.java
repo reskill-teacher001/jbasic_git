@@ -8,7 +8,7 @@ public class CheckString3 {
 		//キーボード入力のおまじない
 		Scanner scan = new Scanner(System.in);
 		
-		String chainStr = "";
+		String chainStr = ""; //連結用変数
 
 		System.out.print("繰り返す回数を入力してください：");
 		int loop = scan.nextInt();
