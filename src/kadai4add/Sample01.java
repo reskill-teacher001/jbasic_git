@@ -3,14 +3,15 @@ package kadai4add;
 public class Sample01 {
 
 	public static void main(String[] args) {
-		double x = 123.456;
-		String s = String.valueOf(x);
-		//String s = "123;"
+		String s = "ABC";
 		
-//		System.out.println(s.charAt(0));
-//		System.out.println(s.charAt(1));
-//		System.out.println(s.charAt(2));
-//		System.out.println(s.length());
+		System.out.println(s.charAt(0));
+		System.out.println(s.charAt(1));
+		System.out.println(s.charAt(2));
+		
+		
+		
+		System.out.println(s.length());
 		
 		for (int i = s.length() - 1; i >= 0; i--) {
 			System.out.print(s.charAt(i));
