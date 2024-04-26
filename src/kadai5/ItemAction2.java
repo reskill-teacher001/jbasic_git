@@ -17,8 +17,6 @@ public class ItemAction2 {
 //				  new Item("扇風機", 4000)
 //		  };
 		  
-		  int[] list = {1, 2, 3};
-		 
 		  // 拡張for文とshowInfoメソッドを利用して 
 		  // 1件ずつ商品情報を出力する
 		  for (Item item : items) {

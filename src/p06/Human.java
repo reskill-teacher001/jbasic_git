@@ -7,7 +7,7 @@ public class Human {
 	
 	//コンストラクタの定義
 	Human() {
-
+		
 	}
 	
 	Human(String name, int age) {

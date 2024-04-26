@@ -17,6 +17,10 @@ public class Start {
 			c.introduce();
 		}
 		
+		for (int i = 0; i < canon.length; i++) {
+			canon[i].introduce();
+		}
+		
 //		Human[] canon = new Human[3];
 //		
 //		canon[0] = new Human("斎藤", 23);
