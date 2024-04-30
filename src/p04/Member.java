@@ -10,6 +10,8 @@ public class Member {
 		System.out.println("個人の目標　：" + myGoal);
 		System.out.println("チームの目標：" + teamGoal);
 		System.out.println("---------------------------");
+		
+		//test();
 	}
 	
 	static void test() {

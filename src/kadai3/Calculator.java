@@ -1,8 +1,14 @@
 package kadai3;
 
 public class Calculator {
+	int x;
+	
+	public void m() {
+		System.out.println(x);
+	}
 
 	public static void main(String[] args) {
+		
 		int a = add(3, 7);
 		System.out.println(a);
 		

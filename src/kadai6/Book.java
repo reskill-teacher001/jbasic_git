@@ -6,7 +6,7 @@ public class Book extends Item {
 	
 	//コンストラクタ
 	public Book() {
-
+		
 	}
 	
 	public Book(String name, int price, String author) {

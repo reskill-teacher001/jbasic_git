@@ -5,6 +5,9 @@ public class ItemAction {
 	public static void main(String[] args) {
 		// Itemオブジェクト（ロボット掃除機/50000円）を生成
 		Item item1 = new Item("ロボット掃除機", 50000);
+//		Item item1 = new Item();
+//		item1.setName("ロボット掃除機");
+//		item1.setPrice(50000);
 
 		// 商品情報を出力 
 		item1.showInfo();
