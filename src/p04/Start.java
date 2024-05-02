@@ -8,8 +8,8 @@ public class Start {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(a);
-		oku();
+//		System.out.println(a);
+//		oku();
 		
 		//Memberクラスのインスタンスを生成
 		Member m1 = new Member();
@@ -28,7 +28,7 @@ public class Start {
 		m2.displayGoal();
 		m3.displayGoal();
 		
-		m1.test();
+		//m1.test();
 	}
 
 }

@@ -18,6 +18,7 @@ public class UseCustomer1 {
 			String name = scan.next(); // 名前の入力 
 
 			Customer customer;
+			
 			if (id == -1) {
 				// IDが-1なら名前だけ登録 
 				customer = new Customer(name);
@@ -25,6 +26,7 @@ public class UseCustomer1 {
 				// IDが-1でなければIDと名前を登録 
 				customer = new Customer(id, name);
 			}
+			
 			customerList[index] = customer;
 		}
 
