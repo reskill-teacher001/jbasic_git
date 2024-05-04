@@ -3,7 +3,7 @@ package janken;
 public enum Hand {
 	GU(1, "グー") {
 		public void check(Hand com) {
-			System.out.println("あなたは" + type + "！");
+			System.out.println("あなたは" + GU.type + "！");
 			System.out.println("コンピュータは" + com.type + "！");
 			
 			String result = com.no == 1 ? "引き分けでした" : (com.no == 2 ? "あなたの勝ち" : "あなたの負け");
@@ -13,7 +13,7 @@ public enum Hand {
 	
 	CHOKI(2, "チョキ") {
 		public void check(Hand com) {
-			System.out.println("あなたは" + type + "！");
+			System.out.println("あなたは" + CHOKI.type + "！");
 			System.out.println("コンピュータは" + com.type + "！");
 			
 			String result = com.no == 2 ? "引き分けでした" : (com.no == 3 ? "あなたの勝ち" : "あなたの負け");
@@ -23,7 +23,7 @@ public enum Hand {
 	
 	PAR(3, "パー") {
 		public void check(Hand com) {
-			System.out.println("あなたは" + type + "！");
+			System.out.println("あなたは" + PAR.type + "！");
 			System.out.println("コンピュータは" + com.type + "！");
 			
 			String result = com.no == 3 ? "引き分けでした" : (com.no == 1 ? "あなたの勝ち" : "あなたの負け");
