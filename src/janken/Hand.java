@@ -2,6 +2,7 @@ package janken;
 
 public enum Hand {
 	GU(1, "グー") {
+		@Override
 		public void check(Hand com) {
 			System.out.println("あなたは" + GU.type + "！");
 			System.out.println("コンピュータは" + com.type + "！");
@@ -12,6 +13,7 @@ public enum Hand {
 	},
 	
 	CHOKI(2, "チョキ") {
+		@Override
 		public void check(Hand com) {
 			System.out.println("あなたは" + CHOKI.type + "！");
 			System.out.println("コンピュータは" + com.type + "！");
@@ -22,6 +24,7 @@ public enum Hand {
 	},
 	
 	PAR(3, "パー") {
+		@Override
 		public void check(Hand com) {
 			System.out.println("あなたは" + PAR.type + "！");
 			System.out.println("コンピュータは" + com.type + "！");
