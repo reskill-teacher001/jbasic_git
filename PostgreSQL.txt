@@ -1,64 +1,79 @@
-●実習　グループ
+CREATE TABLE members(
+id INT PRIMARY KEY,
+name VARCHAR(20)
+);
 
-（１）
-SELECT sum(cost), avg(cost), min(cost), max(cost)
-FROM product;
+INSERT INTO members VALUES(1, '山田');
+INSERT INTO members VALUES(2, '佐藤');
+INSERT INTO members VALUES(3, '鈴木');
+INSERT INTO members VALUES(4, '山本');
+INSERT INTO members VALUES(5, '吉田');
+INSERT INTO members VALUES(6, '中田');
 
-（２）
-SELECT
-count(*), count(discount), count(DISTINCT discount),
-sum(discount), avg(discount), min(discount), max(discount)
-FROM product;
+CREATE TABLE diaries(
+mid INT REFERENCES members(id),
+date TIMESTAMP DEFAULT NOW(),
+content TEXT
+);
 
-（３）
-SELECT
-discount, count(discount), sum(discount),
-avg(discount), min(discount), max(discount)
-FROM product
-GROUP BY discount
-ORDER BY discount;
+INSERT INTO diaries(mid, content)
+VALUES(1, '入社式に行った');
 
-（４）
-SELECT
-discount, count(discount), sum(discount),
-avg(discount), min(discount), max(discount)
-FROM product
-GROUP BY discount
-HAVING count(discount) >= 5
-ORDER BY discount;
+INSERT INTO diaries(mid, content)
+VALUES(2, 'ディズニーに行った');
 
-（５）
-SELECT
-discount, count(discount), sum(discount),
-avg(discount), min(discount), max(discount)
-FROM product
-WHERE cost >= 15000
-GROUP BY discount
-ORDER BY discount;
+INSERT INTO diaries(mid, content)
+VALUES(2, '新宿に行った');
 
-（６）
-SELECT emp_id, avg(total)
-FROM packedsales
-GROUP BY emp_id
-ORDER BY emp_id;
+INSERT INTO diaries(mid, content)
+VALUES(3, '渋谷に行った');
 
-（７）
-SELECT psales_date, sum(total)
-FROM packedsales
-GROUP BY psales_date
-ORDER BY 2 DESC
-LIMIT 5;
+INSERT INTO diaries(mid, content)
+VALUES(3, '両国に行った');
 
-（８）
-①
-SELECT DISTINCT emp_id
-FROM packedsales
-ORDER BY emp_id;
 
-②
-SELECT DISTINCT ON(emp_id) emp_id
-FROM packedsales
-ORDER BY emp_id;
+SELECT m.name, d.date, d.content
+FROM members m
+INNER JOIN diaries d
+ON m.id = d.mid;
+
+SELECT m.name, d.date, d.content
+FROM members m
+LEFT OUTER JOIN diaries d
+ON m.id = d.mid;
+
+SELECT m.name, d.date, d.content
+FROM diaries d
+RIGHT OUTER JOIN members m
+ON m.id = d.mid;
+
+SELECT m.name, d.date, d.content
+FROM diaries d
+CROSS JOIN members m
+ON m.id = d.mid;
+
+
+SELECT m.name, d.date, d.content
+FROM members m
+INNER JOIN diaries d
+ON m.id = d.id;
+
+SELECT m.name, d.date, d.content
+FROM members m
+INNER JOIN diaries d
+USING(id);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
