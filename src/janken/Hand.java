@@ -37,7 +37,7 @@ public enum Hand {
 	int no;
 	String type;
 	
-	Hand(int no, String type) {
+	private Hand(int no, String type) {
 		this.no = no;
 		this.type = type;
 	}
