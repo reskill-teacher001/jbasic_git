@@ -60,8 +60,53 @@ ON m.id = d.id;
 
 SELECT m.name, d.date, d.content
 FROM members m
-INNER JOIN diaries d
-USING(id);
+CROSS JOIN diaries d;
+
+SELECT m.name, d.date, d.content
+FROM members m
+NATURAL JOIN diaries d;
+
+CREATE TABLE prefs(
+id CHAR(2) PRIMARY KEY,
+name VARCHAR(10)
+);
+
+INSERT INTO prefs VALUES('01', '北海道');
+INSERT INTO prefs VALUES('02', '東京');
+INSERT INTO prefs VALUES('03', '大阪');
+INSERT INTO prefs VALUES('04', '福岡');
+INSERT INTO prefs VALUES('05', '沖縄');
+
+
+UPDATE members SET pid = '02' WHERE id = 1;
+UPDATE members SET pid = '05' WHERE id = 2;
+UPDATE members SET pid = '03' WHERE id = 3;
+UPDATE members SET pid = '04' WHERE id = 4;
+UPDATE members SET pid = '01' WHERE id = 5;
+UPDATE members SET pid = '02' WHERE id = 6;
+
+
+CREATE VIEW canon AS
+SELECT m.name, p.name AS pname, d.date, d.content
+FROM members m
+INNER JOIN diaries d ON m.id = d.id
+INNER JOIN prefs p ON m.pid = p.id
+;
+
+SELECT id::INT, name FROM prefs
+UNION
+SELECT id, name FROM members;
+
+SELECT id FROM members
+EXCEPT
+SELECT id::INT FROM prefs;
+
+SELECT id FROM members
+INTERSECT
+SELECT id::INT FROM prefs;
+
+
+
 
 
 

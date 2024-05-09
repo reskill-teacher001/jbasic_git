@@ -1,0 +1,33 @@
+●実習　結合
+
+（１）
+①
+SELECT c.cust_name, p.cust_address, p.delivery_date
+FROM packedsales p
+INNER JOIN customer c
+ON p.cust_id = c.cust_id
+WHERE p.psales_no = 3
+;
+
+②
+SELECT c.cust_name, p.cust_address, p.delivery_date
+FROM packedsales p
+INNER JOIN customer c
+USING(cust_id)
+WHERE p.psales_no = 3
+;
+
+③
+SELECT cust_name, cust_address, delivery_date
+FROM packedsales
+INNER JOIN customer
+USING(cust_id)
+WHERE psales_no = 3
+;
+
+（２）
+SELECT prod_name, quantity * price AS amount
+FROM sales
+INNER JOIN product USING(prod_id)
+WHERE quantity >= 3
+;
