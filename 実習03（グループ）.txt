@@ -1,0 +1,64 @@
+●実習　グループ
+
+（１）
+SELECT sum(cost), avg(cost), min(cost), max(cost)
+FROM product;
+
+（２）
+SELECT
+count(*), count(discount), count(DISTINCT discount),
+sum(discount), avg(discount), min(discount), max(discount)
+FROM product;
+
+（３）
+SELECT
+discount, count(discount), sum(discount),
+avg(discount), min(discount), max(discount)
+FROM product
+GROUP BY discount
+ORDER BY discount;
+
+（４）
+SELECT
+discount, count(discount), sum(discount),
+avg(discount), min(discount), max(discount)
+FROM product
+GROUP BY discount
+HAVING count(discount) >= 5
+ORDER BY discount;
+
+（５）
+SELECT
+discount, count(discount), sum(discount),
+avg(discount), min(discount), max(discount)
+FROM product
+WHERE cost >= 15000
+GROUP BY discount
+ORDER BY discount;
+
+（６）
+SELECT emp_id, avg(total)
+FROM packedsales
+GROUP BY emp_id
+ORDER BY emp_id;
+
+（７）
+SELECT psales_date, sum(total)
+FROM packedsales
+GROUP BY psales_date
+ORDER BY 2 DESC
+LIMIT 5;
+
+（８）
+①
+SELECT DISTINCT emp_id
+FROM packedsales
+ORDER BY emp_id;
+
+②
+SELECT DISTINCT ON(emp_id) emp_id
+FROM packedsales
+ORDER BY emp_id;
+
+
+
