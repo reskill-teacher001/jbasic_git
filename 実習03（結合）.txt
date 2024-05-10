@@ -3,8 +3,8 @@
 （１）
 ①
 SELECT c.cust_name, p.cust_address, p.delivery_date
-FROM packedsales p
-INNER JOIN customer c
+FROM customer c
+INNER JOIN packedsales p
 ON p.cust_id = c.cust_id
 WHERE p.psales_no = 3
 ;

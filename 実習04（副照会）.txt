@@ -1,0 +1,23 @@
+●実習　副照会
+
+（１）
+SELECT psales_no, prod_id, price
+FROM sales
+WHERE price = (SELECT MAX(price) FROM sales);
+
+（２）
+SELECT psales_no, emp_id, cust_id, total
+FROM packedsales
+WHERE total >= (SELECT AVG(total) FROM packedsales)
+ORDER BY total, psales_no;
+
+（３）
+SELECT sales_no, prod_id, price
+FROM sales
+WHERE sales_no = 1 AND price <= ALL(SELECT AVG(price) FROM sales GROUP BY prod_id);
+
+（４）
+SELECT dept_id, dept_name
+FROM department
+WHERE dept_id NOT IN(SELECT dept_id FROM employee);
+
