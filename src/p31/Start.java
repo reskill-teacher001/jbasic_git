@@ -21,6 +21,13 @@ public class Start {
 			c.work();
 			c.salary();		
 		}
+		
+		Kudo k = new Kudo();
+		k.test();
+		
+		Canon c = new Kudo();
+		c.test();
+		
 	}
 
 }

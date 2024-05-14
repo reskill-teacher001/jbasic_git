@@ -106,13 +106,142 @@ INTERSECT
 SELECT id::INT FROM prefs;
 
 
+CREATE TABLE prefs2(
+id CHAR(2) PRIMARY KEY,
+name VARCHAR(10)
+);
+
+CREATE TABLE bank(
+id INT PRIMARY KEY,
+name VARCHAR(20),
+money INT
+);
+
+INSERT INTO bank VALUES(1, '遠藤', 100000);
+INSERT INTO bank VALUES(2, '菊水', 200000);
+
+START TRANSACTION;
+
+①
+UPDATE bank SET money = money - 50000 WHERE id = 2;
+
+②
+UPDATE bank SET money = money + 50000 WHERE id = 1;
+
+
+START TRANSACTION;
+START TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+INSERT INTO bank VALUES(3, '本間', 300000);
+
+UPDATE bank SET money = money - 10000 WHERE id = 2;
+UPDATE bank SET money = money - 10000 WHERE id = 1;
+
+
+SELECT * FROM bank WHERE id = 2 FOR UPDATE;
+
+COMMIT;
+ROLLBACK;
 
 
 
+CREATE TABLE sample (
+id INT PRIMARY KEY,
+name VARCHAR(20)
+);
+
+CREATE TABLE users(
+id INT PRIMARY KEY,
+name VARCHAR(20) NOT NULL,
+age INT CHECK(age >= 0),
+no INT UNIQUE
+);
+
+INSERT INTO users VALUES(1, 'AAA', 23, 1);
+INSERT INTO users VALUES(2, 'BBB', 23, NULL);
+INSERT INTO users VALUES(3, NULL, 23, 3);
+INSERT INTO users(id, age, no) VALUES(4, 23, 4);
+INSERT INTO users VALUES(4, 'CCC', -23, 4);
+
+
+CREATE TABLE users2(
+id INT PRIMARY KEY,
+name VARCHAR(20),
+pid CHAR(2) REFERENCES prefs(id)
+);
+
+CREATE TABLE users3(
+id INT,
+name VARCHAR(20),
+pid CHAR(2),
+PRIMARY KEY(id),
+FOREIGN KEY(pid) REFERENCES prefs(id)
+);
+
+CREATE TABLE users4(
+id INT,
+name VARCHAR(20),
+age INT
+);
+
+no INT
+
+ALTER TABLE users4 ADD no INT;
+
+ALTER TABLE users4 DROP no;
+
+ALTER TABLE users4 ALTER name SET NOT NULL;
+
+ALTER TABLE users4 ALTER name DROP NOT NULL;
+
+ALTER TABLE users4 ALTER age SET DEFAULT 0;
+
+INSERT INTO users4(id, name) VALUES(1, 'AAA');
+
+ALTER TABLE users4 ALTER age DROP DEFAULT;
+
+ALTER TABLE users5 RENAME TO users4;
+
+
+ALTER TABLE users4 ADD PRIMARY KEY(id);
 
 
 
+ALTER TABLE users4 DROP CONSTRAINT users4_pkey;
 
+
+CREATE TABLE users7(
+id INT PRIMARY KEY,
+name VARCHAR(20)
+);
+
+INSERT INTO users7 VALUES(nextval('seq'), 'AAA');
+INSERT INTO users7 VALUES(nextval('seq'), 'BBB');
+INSERT INTO users7 VALUES(nextval('seq'), 'CCC');
+
+
+CREATE TABLE users8(
+id SERIAL PRIMARY KEY,
+name VARCHAR(20)
+);
+
+
+INSERT INTO users8(name) VALUES('AAA');
+INSERT INTO users8(name) VALUES('BBB');
+INSERT INTO users8(name) VALUES('CCC');
+
+MySQL仕様
+CREATE TABLE users8(
+id INT PRIMARY KEY AUTO INCREMENT,
+name VARCHAR(20)
+);
+
+CREATE VIEW canon2 AS
+SELECT m.name, p.name AS pname, d.date, d.content
+FROM members m
+INNER JOIN diaries d ON m.id = d.id
+INNER JOIN prefs p ON m.pid = p.id
+;
 
 
 

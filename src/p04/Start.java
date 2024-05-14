@@ -28,7 +28,8 @@ public class Start {
 		m2.displayGoal();
 		m3.displayGoal();
 		
-		//m1.test();
+		m1.test();
+		Member.test();
 	}
 
 }

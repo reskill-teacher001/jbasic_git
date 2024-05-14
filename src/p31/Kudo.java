@@ -12,5 +12,9 @@ public class Kudo implements Canon {
 	public void salary() {
 		System.out.println("２８万円です");
 	}
+	
+	public void test() {
+		
+	}
 
 }
